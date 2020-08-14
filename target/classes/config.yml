@@ -1,0 +1,4 @@
+#multiplier for how much each looting level should increment by
+#Make sure to put .0 or whatever after it NEEDS to have a decimal
+incrementLooting: 0.5
+incrementFortune: 0.5

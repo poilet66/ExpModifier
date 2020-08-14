@@ -1,0 +1,5 @@
+name: ExpModifier
+version: 1.0
+main: me.poilet66.expmodifier.ExpModifier
+api-version: 1.15
+commands:
