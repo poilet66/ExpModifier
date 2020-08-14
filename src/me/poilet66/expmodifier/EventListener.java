@@ -37,10 +37,12 @@ public class EventListener implements Listener {
     public void onBlockBreakEvent(BlockBreakEvent event) {
         if(event.getPlayer() != null) {
             Player player = event.getPlayer();
-            int fortuneLevel = player.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS);
-            double droppedExp = event.getExpToDrop();
-            droppedExp *= (1 + (incrementPerLevelFortune * fortuneLevel));
-            event.setExpToDrop((int) droppedExp);
+            if(player.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS) != 0) {
+                int fortuneLevel = player.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS);
+                double droppedExp = event.getExpToDrop();
+                droppedExp *= (1 + (incrementPerLevelFortune * fortuneLevel));
+                event.setExpToDrop((int) droppedExp);
+            }
         }
     }
 
